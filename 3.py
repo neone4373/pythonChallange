@@ -1249,5 +1249,30 @@ dCdFLtBQPtFQuCdKOrpndJNUFQIDSbetUKylhSUjcDVtbiQrWMRQhAwGUZyPneCGUjGBBTkLqxLAXXtB
 KfErkDaWMFZZeuqDmXKJEGHyToPUhPphfVhgUZgbIuRAtWnroImpJKqqmEZqeNQCKzhjIkKQHURWLXFw
 PBuijeoTSpsVLaOGuLVjMZXkBvVXwUuHfBihziiavGSYofPNeKsTXruMUumRRPQJzvSzJkKbtSipiqBd
 """
+ends = "qBd"
 
-print len(mess)
+lessMess = ""
+for w in mess:
+  if w != "\n":
+    lessMess += w
+#print mess[:300], mess[:300].count("\n"); print lessMess
+i = 0
+f = lessMess
+answer = ""
+while i < len(f) - 7:
+  snipe = f[i:i+9]
+  s = snipe[:1]
+  n = snipe[1:4]
+  u = snipe[4]
+  p = snipe[5:8]
+  e = snipe[8:]
+  master = s.lower() + n.upper() + u.lower() + p.upper() + e.lower()
+  if  snipe == master:
+    #print "Index", i, f[i:i+9]; print f[i+1:i+8]+"."
+    answer += f[i+4]
+  #if i % 10000 == 0:
+    #print i
+  #print snipe,s,n,u,p,e
+  i += 1
+print answer
+
